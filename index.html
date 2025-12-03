@@ -1,136 +1,196 @@
-import React from "react";
+# index.html
 
-// 10 Minuman Hits — Single-file React component
-// TailwindCSS classes used. Replace image URLs with PNGs that have transparent backgrounds for best effect.
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 Minuman Hits</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>10 Minuman Hits</h1>
+    <p>Kumpulan resep minuman kekinian lengkap dengan bahan dan link pembuatannya.</p>
+  </header>
 
-export default function MinumanHits() {
-  const drinks = [
-    {
-      name: "Dalgona Coffee",
-      img: "https://via.placeholder.com/600x400.png?text=Dalgona+Coffee",
-      ingredients: [
-        "2 sdm kopi instan",
-        "2 sdm gula",
-        "2 sdm air panas",
-        "Susu dingin / es batu"
-      ],
-      steps: [
-        "Kocok kopi, gula, dan air panas hingga mengembang.",
-        "Tuang susu dalam gelas, tambahkan es.",
-        "Sendokkan busa kopi di atas susu."
-      ],
-      link: "https://www.example.com/dalgona-recipe"
-    },
-    {
-      name: "Thai Iced Tea",
-      img: "https://via.placeholder.com/600x400.png?text=Thai+Iced+Tea",
-      ingredients: ["Teh Thai atau teh hitam kuat","Susu kental manis","Es batu","Rempah (vanili, star anise)"],
-      steps: ["Seduh teh sangat pekat bersama rempah.","Saring, dinginkan, tuang di atas es.","Tambahkan susu kental manis sesuai selera."],
-      link: "https://www.example.com/thai-iced-tea"
-    },
-    {
-      name: "Boba Milk Tea",
-      img: "https://via.placeholder.com/600x400.png?text=Boba+Milk+Tea",
-      ingredients: ["Tepung tapioka (boba)","Teh hitam kuat","Susu / creamer","Gula atau sirup"],
-      steps: ["Rebus boba sampai kenyal.","Seduh teh, campur gula dan susu.","Masukkan boba, sajikan dingin."],
-      link: "https://www.example.com/boba-milk-tea"
-    },
-    {
-      name: "Iced Matcha Latte",
-      img: "https://via.placeholder.com/600x400.png?text=Matcha+Latte",
-      ingredients: ["2 sdt bubuk matcha","2 sdm air panas","Susu dingin","Es batu"],
-      steps: ["Larutkan matcha dengan air panas.","Tuang ke dalam gelas berisi es dan susu.","Aduk dan nikmati."],
-      link: "https://www.example.com/matcha-latte"
-    },
-    {
-      name: "Chocolate Frappe",
-      img: "https://via.placeholder.com/600x400.png?text=Chocolate+Frappe",
-      ingredients: ["Susu","Es batu","Syrup cokelat","Krim kocok (opsional)"],
-      steps: ["Blender semua bahan sampai halus.","Tuang ke gelas, tambahkan krim kocok."],
-      link: "https://www.example.com/chocolate-frappe"
-    },
-    {
-      name: "Caramel Macchiato",
-      img: "https://via.placeholder.com/600x400.png?text=Caramel+Macchiato",
-      ingredients: ["Espresso atau kopi pekat","Susu panas","Sirup karamel"],
-      steps: ["Tuang sirup karamel ke gelas.","Tambahkan susu dan espresso di atasnya."],
-      link: "https://www.example.com/caramel-macchiato"
-    },
-    {
-      name: "Cold Brew",
-      img: "https://via.placeholder.com/600x400.png?text=Cold+Brew",
-      ingredients: ["Bubuk kopi kasar","Air dingin","Es batu"],
-      steps: ["Rendam kopi dengan air dingin 12-18 jam.","Saring, sajikan dingin di atas es."],
-      link: "https://www.example.com/cold-brew"
-    },
-    {
-      name: "Strawberry Smoothie",
-      img: "https://via.placeholder.com/600x400.png?text=Strawberry+Smoothie",
-      ingredients: ["Stroberi beku","Susu atau yogurt","Madu atau gula","Es (opsional)"],
-      steps: ["Blender semua bahan sampai lembut.","Tuang dan sajikan segera."],
-      link: "https://www.example.com/strawberry-smoothie"
-    },
-    {
-      name: "Mango Lassi",
-      img: "https://via.placeholder.com/600x400.png?text=Mango+Lassi",
-      ingredients: ["Mangga matang","Yogurt","Susu/air","Gula"],
-      steps: ["Blender semua bahan sampai halus.","Dinginkan lalu sajikan."],
-      link: "https://www.example.com/mango-lassi"
-    },
-    {
-      name: "Affogato",
-      img: "https://via.placeholder.com/600x400.png?text=Affogato",
-      ingredients: ["1-2 scoop es krim vanila","1 shot espresso panas"],
-      steps: ["Letakkan es krim dalam cangkir.","Tuang espresso panas di atasnya dan nikmati."],
-      link: "https://www.example.com/affogato"
-    }
-  ];
+  <div class="container" id="drink-container"></div>
 
-  return (
-    <div className="min-h-screen p-6" style={{ background: 'linear-gradient(180deg, #2b1b12 0%, #1b0f08 100%)', color: '#f3e6dc' }}>
-      <header className="max-w-6xl mx-auto mb-8">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">10 Minuman Hits</h1>
-        <p className="text-sm md:text-base text-gray-300">Kumpulan resep minuman kekinian lengkap dengan bahan, langkah singkat, dan link resep lengkap.</p>
-      </header>
+  <footer>
+    <p>Gunakan PNG transparan untuk background minuman.</p>
+  </footer>
 
-      <main className="max-w-6xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {drinks.map((d, idx) => (
-          <article key={d.name} className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)' }}>
-            {/* Image area: expect transparent PNGs for best overlay */}
-            <div className="h-44 md:h-56 w-full bg-gradient-to-b from-transparent to-black/40 flex items-center justify-center" style={{ backdropFilter: 'blur(2px)' }}>
-              <img src={d.img} alt={d.name} className="max-h-full object-contain p-4" style={{ background: 'transparent' }} />
-            </div>
+  <script src="script.js"></script>
+<div class="drink-images">
+    <img src="https://i.ibb.co/8m2v7zL/coffee-transparent.png" alt="Coffee" />
+    <img src="https://i.ibb.co/1m6MKMh/matcha-transparent.png" alt="Matcha" />
+    <img src="https://i.ibb.co/6B2QPwM/milkshake-transparent.png" alt="Milkshake" />
+    <img src="https://i.ibb.co/v4Sfbx4/bubble-tea-transparent.png" alt="Boba" />
+</div>
+</body>
+</html>
+```
 
-            <div className="p-5">
-              <h2 className="text-2xl font-semibold mb-2">{idx + 1}. {d.name}</h2>
-              <div className="text-sm mb-3">
-                <strong>Bahan:</strong>
-                <ul className="list-disc list-inside text-gray-200">
-                  {d.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                </ul>
-              </div>
+---
 
-              <div className="text-sm mb-4">
-                <strong>Langkah singkat:</strong>
-                <ol className="list-decimal list-inside text-gray-200">
-                  {d.steps.map((s, i) => <li key={i}>{s}</li>)}
-                </ol>
-              </div>
+# style.css
 
-              <div className="flex items-center justify-between">
-                <a href={d.link} target="_blank" rel="noreferrer" className="text-sm px-4 py-2 rounded-lg border border-transparent hover:underline" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))' }}>
-                  Lihat resep lengkap
-                </a>
-                <span className="text-xs text-gray-400">Est. 5–10 menit</span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </main>
-
-      <footer className="max-w-6xl mx-auto mt-10 text-center text-gray-400 text-sm">
-        <p>Catatan: Ganti URL gambar dengan file PNG/WEBP berbackground transparan untuk efek 'background minuman hits transparan'.</p>
-      </footer>
-    </div>
-  );
+```css
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #2b1b12, #1b0f08);
+  color: #f3e6dc;
 }
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+p {
+  color: #d3c5b8;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+.thumb {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(3px);
+}
+.thumb img {
+  max-height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+.content {
+  padding: 20px;
+}
+a {
+  color: #ffddaa;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #bba99b;
+}
+```
+
+---
+
+# script.js
+
+```javascript
+const drinks = [
+  {
+    name: "Dalgona Coffee",
+    img: "https://via.placeholder.com/600x400.png?text=Dalgona+Coffee",
+    ingredients: ["Kopi instan", "Gula", "Air panas", "Susu + es"],
+    steps: ["Kocok hingga mengembang", "Tuang ke susu dingin"],
+    link: "https://www.example.com/dalgona"
+  },
+  {
+    name: "Thai Iced Tea",
+    img: "https://via.placeholder.com/600x400.png?text=Thai+Tea",
+    ingredients: ["Teh Thai", "Susu kental manis", "Es"],
+    steps: ["Seduh teh", "Tambahkan susu dan es"],
+    link: "https://www.example.com/thaitea"
+  },
+  {
+    name: "Boba Milk Tea",
+    img: "https://via.placeholder.com/600x400.png?text=Boba+Milk+Tea",
+    ingredients: ["Boba", "Teh hitam", "Susu"],
+    steps: ["Rebus boba", "Campur teh + susu"],
+    link: "https://www.example.com/boba"
+  },
+  {
+    name: "Matcha Latte",
+    img: "https://via.placeholder.com/600x400.png?text=Matcha+Latte",
+    ingredients: ["Matcha", "Air panas", "Susu + es"],
+    steps: ["Larutkan matcha", "Campur susu dingin"],
+    link: "https://www.example.com/matcha"
+  },
+  {
+    name: "Chocolate Frappe",
+    img: "https://via.placeholder.com/600x400.png?text=Chocolate+Frappe",
+    ingredients: ["Susu", "Es", "Cokelat"],
+    steps: ["Blender semua bahan"],
+    link: "https://www.example.com/frappe"
+  },
+  {
+    name: "Caramel Macchiato",
+    img: "https://via.placeholder.com/600x400.png?text=Caramel+Macchiato",
+    ingredients: ["Espresso", "Susu", "Karamel"],
+    steps: ["Tambahkan karamel", "Tuang espresso"],
+    link: "https://www.example.com/caramel"
+  },
+  {
+    name: "Cold Brew",
+    img: "https://via.placeholder.com/600x400.png?text=Cold+Brew",
+    ingredients: ["Kopi kasar", "Air dingin"],
+    steps: ["Rendam 12 jam", "Saring dan sajikan"],
+    link: "https://www.example.com/coldbrew"
+  },
+  {
+    name: "Strawberry Smoothie",
+    img: "https://via.placeholder.com/600x400.png?text=Strawberry+Smoothie",
+    ingredients: ["Stroberi", "Yogurt", "Madu"],
+    steps: ["Blender hingga lembut"],
+    link: "https://www.example.com/smoothie"
+  },
+  {
+    name: "Mango Lassi",
+    img: "https://via.placeholder.com/600x400.png?text=Mango+Lassi",
+    ingredients: ["Mangga", "Yogurt", "Susu"],
+    steps: ["Blender semua bahan"],
+    link: "https://www.example.com/lassi"
+  },
+  {
+    name: "Affogato",
+    img: "https://via.placeholder.com/600x400.png?text=Affogato",
+    ingredients: ["Es krim vanila", "Espresso panas"],
+    steps: ["Tuang espresso ke es krim"],
+    link: "https://www.example.com/affogato"
+  }
+];
+
+const container = document.getElementById("drink-container");
+
+container.innerHTML = drinks
+  .map(
+    (d) => `
+    <div class="card">
+      <div class="thumb"><img src="${d.img}" alt="${d.name}"></div>
+      <div class="content">
+        <h2>${d.name}</h2>
+        <strong>Bahan:</strong>
+        <ul>${d.ingredients.map((i) => `<li>${i}</li>`).join("")}</ul>
+        <strong>Langkah:</strong>
+        <ol>${d.steps.map((s) => `<li>${s}</li>`).join("")}</ol>
+        <a href="${d.link}" target="_blank">Lihat resep lengkap</a>
+      </div>
+    </div>
+  `
+  )
+  .join("");
+```
