@@ -1,0 +1,46 @@
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: linear-gradient(#013a63, #026aa7);
+color: white;
+}
+
+
+header {
+text-align: center;
+padding: 30px;
+}
+
+
+.drink-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+padding: 20px;
+}
+
+
+.drink-card {
+background: rgba(255, 255, 255, 0.12);
+border-radius: 15px;
+padding: 20px;
+backdrop-filter: blur(6px);
+text-align: center;
+}
+
+
+.drink-card img {
+width: 180px;
+height: auto;
+margin-bottom: 10px;
+}
+
+
+.drink-card a {
+color: #ffee88;
+text-decoration: none;
+font-weight: bold;
+}
+</style>
+
